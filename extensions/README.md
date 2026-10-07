@@ -8,6 +8,9 @@ forking, how the seam works and what it can't reach.
 | Extension | What it does | Tested on |
 |---|---|---|
 | [example-pinboard](example-pinboard/) | Template: one module, one tool, persistent state. Not a fix for anything. | host 0.9.0 / AF 0.21.0, 2026-10-06 |
+| [clock](clock/) | Adds a `[clock]` line to incoming activity at most once an interval, so a long-running agent knows the time. | live on host 0.9.0 / AF 0.17.0; checked on host main / AF 0.21.0, 2026-10-07 |
+| [resident-window](resident-window/) | Strategy `autobiographical-resident`: chunks close at silences; filler `skip_reply` turns and `[reaction]` events stay out of the live window. | live on host 0.9.0 / CM 0.10.1; checked on host main / CM 0.13.0, 2026-10-07 |
+| [llm-proxy](llm-proxy/) | Local proxy for OpenAI-compatible providers: first-byte and idle deadlines, retries and failover. | live on host 0.9.0; checked on host main, 2026-10-07 |
 
 ## Adding one
 

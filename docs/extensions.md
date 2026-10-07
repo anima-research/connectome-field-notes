@@ -60,8 +60,9 @@ Many simplifications need no code. A stock recipe already controls:
 - **How prose is routed** (`agent.proseRouting`).
 
 The host README is the reference for all of these. Recipe-level control over
-tool visibility and descriptions is in progress: agent-framework #162 and
-connectome-host #135, both still open.
+tool visibility and descriptions is in progress: agent-framework #162 is
+merged (2026-10-06), and connectome-host #135, which exposes it in recipes,
+is still open.
 
 ## How the extension seam works
 
@@ -170,6 +171,13 @@ seam that would have made the patch unnecessary.
   carry a relative path to an extension.
 - **Extension paths are saved resolved.** The host snapshots the resolved
   `path` into the data directory, so never interpolate a `${SECRET}` into it.
+- **A runtime import resolves from the extension's own location first.** An
+  extension that imports `@animalabs/*` at runtime (to subclass a strategy,
+  say) gets this repo's `node_modules` copy if this checkout has one, for
+  example after `npm install` for `npm run check`, and that may not be the
+  version your host ships. Without one, Bun falls back to the host's copy.
+  Load extensions from a checkout without `node_modules`, or keep its
+  versions in step with the host.
 - **Extensions run in-process, with full access.** That means your agent's API
   keys, its store and the filesystem. Read every extension before loading it,
   including the ones in this repo.

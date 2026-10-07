@@ -9,6 +9,15 @@ forking, how the seam works and what it can't reach.
 |---|---|---|
 | [example-pinboard](example-pinboard/) | Template: one module, one tool, persistent state. Not a fix for anything. | host 0.9.0 / AF 0.21.0, 2026-10-06 |
 
+## Elsewhere
+
+Extensions kept in their own repositories, usually because they come with a
+service or support more than one host. Read them the same way before loading.
+
+| Extension | What it does | Tested on |
+|---|---|---|
+| [memory-pool](https://github.com/HO-git/memory-pool) | Saves an agent's conversations as embeddings in a shared Qdrant pool, so Connectome, ChapterX, SillyTavern (st-qdrant-memory) and any other interface keep one memory. Optional `recall` tool; nothing injected into the prompt. Needs its small service running. | host 0.9.0 / AF 0.21.0, 2026-10-07 |
+
 ## Adding one
 
 - One directory per extension: `extensions/<name>/index.ts` plus a `README.md`.

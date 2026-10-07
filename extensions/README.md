@@ -8,6 +8,8 @@ forking, how the seam works and what it can't reach.
 | Extension | What it does | Tested on |
 |---|---|---|
 | [example-pinboard](example-pinboard/) | Template: one module, one tool, persistent state. Not a fix for anything. | host 0.9.0 / AF 0.21.0, 2026-10-06 |
+| [loop-guard](loop-guard/) | Ends a turn stuck in a tool loop (identical calls, a single-tool streak such as endless `think`, or too many rounds) and tells the agent why. | host 0.9.0 / AF 0.21.0, 2026-10-07 |
+| [operator-interrupt](operator-interrupt/) | An operator's `!interrupt` message stops the agent's current turn; other messages are left alone. | host 0.9.0 / AF 0.21.0, 2026-10-07 |
 
 ## Adding one
 

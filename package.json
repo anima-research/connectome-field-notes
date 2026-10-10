@@ -8,6 +8,6 @@
   },
   "devDependencies": {
     "@animalabs/agent-framework": "^0.21.0",
-    "typescript": "^5.7.0"
+    "typescript": "^7.0.2"
   }
 }
